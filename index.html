@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator GS</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="main-title">Password Generator</h2>
+        <!-- Политика конфиденциальности -->
+        <div class="privacy-policy">
+            <div class="inner-container">
+                <h3>By using this service you agree to the <a id="policy">Privacy policy</a></h3>
+                <img src="images/close_button.svg" alt="X" id="close-policy">
+            </div>
+            <p id="policy-text">The creator of the service is not responsible for the security of your data. Password generation is done locally on your device. Passwords are not stored anywhere. When actually using the generated password, do not share it with anyone; if you share the password, the security of your data is not guaranteed.</p>
+        </div>
+        <!-- Поле генерации -->
+        <div class="generate-field">
+            <!-- Форма генерации -->
+            <div class="generate-form">
+                <form action="expery01.html" method="get">
+                    <label for="numberOfChar">Select number of characters:</label>
+                    <select name="numberOfChar" id="numberOfChar"></select>
+                    <br>
+                    <label for="chooseOptions">Select opotions:</label>
+                    <select name="chooseOptions" id="chooseOptions">
+                        <option value="onlyCharacters">Only Characters</option>
+                        <option disabled value="charactersAndSpecials">Characters & Special Symbols</option>
+                        <option value="onlyNumbers">Only Numbers</option>
+                        <option disabled value="numbersAndSpecials">Numbers & Special Symbols</option>
+                        <option value="charactersAndNumbers">Characters & Numbers</option>
+                        <option disabled value="num&char&Specials">Characters & Numbers & Special Symbols</option>
+                    </select>
+                    <br>
+                    <input type="checkbox" name="specialSymbol" id="specialSymbol">
+                    <label for="specialSymbol">Use special characters?</label>
+                    <br>
+                    <label for="numberOfSpecial" id="labelSpecial" class="none">Select number of special symbols:</label>
+                    <select name="numberOfSpecial" id="numberOfSpecial" class="none"></select>
+                    <br>
+                    <label for="numberOfPasswords">How many passwords generate?</label>
+                    <select name="numberOfPasswords" id="numberOfPasswords"></select>
+                    <br>
+                    <button type="button" id="generateButton">
+                        <div class="skew" id="skew_button"></div>
+                        Generate
+                    </button>
+                </form>
+            </div>
+            <!-- Показ уровня сложности пароля -->
+            <div class="generate-complexity">
+                <img src="images/weak.png" alt="weak" class="complexity-img active" id="weak">
+                <img src="images/optimal.png" alt="optimal" class="complexity-img" id="optimal">
+                <img src="images/strong.png" alt="strong" class="complexity-img" id="strong">
+                <div id="complexity"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Поле вывода результата -->
+    <div class="container">
+        <div class="none" id="showResult">
+            <h3 class="result-title">Generated password(s):</h3>
+            <ul id="result_list"></ul>
+        </div>
+    </div>
+    <script src="scripts/styling.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

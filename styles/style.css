@@ -1,0 +1,399 @@
+/* ------------ Обнуление стилей ------------ */
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+/* ------------ Общие стили ------------ */
+body {
+    /* background-color: rgb(44, 44, 44); */
+    background-color: #202020;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container {
+    width: 1110px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.main-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* ------------ Соглашение использования ------------ */
+.privacy-policy {
+    width: 100%;
+    height: 45px;
+    background: #727272;
+
+    color: #222222;
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: all linear 0.3s;
+    overflow: hidden;
+}
+.privacy-policy.height {
+    height: auto;
+}
+.privacy-policy.none {
+    display: none;
+}
+.inner-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#close-policy {
+    width: 25px;
+}
+#close-policy:hover {
+    cursor: pointer;
+}
+#policy-text {
+    text-align: justify;
+    height: 0;
+    margin-top: 0;
+    opacity: 0;
+    transition: all linear 0.3s;
+}
+#policy-text.active {
+    height: auto;
+    margin-top: 10px;
+    opacity: 1;
+}
+#policy {
+    text-decoration: underline;
+}
+
+/* ------------ Форма ------------ */
+.generate-field {
+    display: flex;
+    min-height: 350px;
+    justify-content: space-around;
+    align-items: center;
+}
+.generate-form {
+    width: 40%;
+}
+.generate-form>form>label, .generate-form>form>select {
+    font-size: 18px;
+}
+.generate-form>form>select, .generate-form>form>input {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+#labelSpecial {
+    display: inline;
+}
+#labelSpecial.none {
+    display: none;
+}
+#numberOfSpecial {
+    display: inline;
+}
+#numberOfSpecial.none {
+    display: none;
+}
+#generateButton {
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    color: #FFF;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 15px;
+
+    border: 1px solid #FFF;
+    background: linear-gradient(95deg, #F0C 0%, #339 72.39%);
+    box-shadow: 0px 0px 40px 0px rgba(237, 35, 255, 0.75);
+
+    border: 0;
+    transition: linear all 0.3s;
+    margin-top: 30px;
+
+    position: relative;
+    overflow: hidden;
+}
+#generateButton:hover {
+    cursor: pointer;
+    scale: 1.02;
+}
+.skew {
+    width: 60px;
+    height: 70px;
+    transform: skew(-30deg);
+    background-color: rgba(255, 255, 255, 0.80);;
+    position: absolute;
+    top: 0;
+    left: -80px;
+    transition: all linear 0.3s;
+}
+.skew.animate {
+    left: auto;
+    transform: translateX(300px);
+}
+
+/* ------------ Уровень сложности ------------ */
+.generate-complexity {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.complexity-img {
+    width: 300px;
+    display: none;
+}
+.complexity-img.active {
+    display: block;
+}
+#complexity>h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.color-weak {
+    color: #D84E00;
+    text-shadow: 0px 0px 5px #D84E00;
+}
+.color-optimal {
+    color: #FFE600;
+    text-shadow: 0px 0px 5px #FFE600;
+}
+.color-strong {
+    color: #00AE1C;
+    text-shadow: 0px 0px 5px #00AE1C;
+}
+
+/* ------------ Результат генерации ------------ */
+.result-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#result>li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+#showResult {
+    opacity: 1;
+    transition: linear all 0.5s;
+}
+#showResult.none {
+    opacity: 0;
+}
+/* Элемент списка */
+.container.mrgbttm {
+    margin-bottom: 100px;
+}
+#result_list {
+    width: 100%;
+    column-count: 3;
+    justify-content: space-around;
+}
+.result_item {
+    min-width: 220px;
+    max-width: 370px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    margin-bottom: 15px;
+    background-color: #a4a4a4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+
+    position: relative;
+    overflow: hidden;
+    transition: all linear 0.2s;
+    user-select: none;
+}
+.result_item:hover {
+    scale: 1.02;
+    border: solid 2px #FFF;
+}
+.result_item>button {
+    margin-left: 15px;
+    height: 100%;
+    background-color: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+}
+.result_item>button::after {
+    content: url(../images/copy_button_white.svg);
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 5px;
+}
+.result_item.copied>button {
+    margin-left: 15px;
+    height: 100%;
+    background-color: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+}
+.result_item.copied>button::after {
+    content: url(../images/done_icon_white.svg);
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 5px;
+}
+
+/* Градиенты для элементов паролей */
+.password_color_01 {
+    background: linear-gradient(91deg, #7F00FF 0%, #E100FF 100%);
+}
+.password_color_02 {
+    background: linear-gradient(91deg, #52C234 0%, #061700 100%);
+}
+.password_color_03 {
+    background: linear-gradient(91deg, #F12711 0%, #F5AF19 100%);
+}
+.password_color_04 {
+    background: linear-gradient(91deg, #000046 0%, #1CB5E0 100%);
+}
+.password_color_05 {
+    background: linear-gradient(91deg, #EE0979 0%, #FF6A00 100%);
+}
+.password_color_06 {
+    background: linear-gradient(91deg, #F79D00 0%, #64F38C 100%);
+}
+.password_color_07 {
+    background: linear-gradient(91deg, #1B9EE8 0%, #38EF7D 100%);
+}
+.password_color_08 {
+    background: linear-gradient(91deg, #34E89E 0%, #0F3443 100%);
+}
+.password_color_09 {
+    background: linear-gradient(91deg, #DB15D5 0%, #F86A12 100%);
+}
+.password_color_10 {
+    background: linear-gradient(91deg, #12C2E9 0%, #F713A9 100%);
+}
+.element_skew {
+    width: 90px;
+    height: 60px;
+    transform: skew(-30deg);
+    background-color: rgba(255, 255, 255, 0.80);;
+    position: absolute;
+    top: 0;
+    left: -110px;
+    transition: all linear 0.2s;
+}
+.element_skew.animate {
+    left: auto;
+    transform: translateX(350px);
+}
+
+/* ------------- Responsive ------------- */
+
+/* 992px - 1200px */
+@media screen and (max-width: 1200px) {
+	.container {
+		width: 960px;
+	}
+}
+/* 768px - 992px */
+@media screen and (max-width: 992px) {
+	.container {
+		width: 720px;
+	}
+    .generate-field {
+        margin-top: 30px;
+    }
+    #result_list {
+        column-count: 2;
+    }
+}
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+	.container {
+		width: 540px;
+	}
+    .generate-field {
+        flex-direction: column;
+    }
+    .generate-form {
+        width: 100%;
+    }
+    #generateButton {
+        margin-top: 15px;
+    }
+    .generate-complexity {
+        width: 100%;
+    }
+    .complexity-img {
+        width: 250px;
+    }
+    #result_list {
+        column-count: 1;
+    }
+    .result_item {
+        max-width: 100%;
+    }
+}
+/* 320px - 576px */
+@media screen and (max-width: 576px) {
+	.container {
+		width: 90%;
+	}
+    .generate-form>form>select {
+        max-width: 100%;
+        font-size: 17px;
+    }
+    #generateButton {
+        width: 100%;
+        border-radius: 25px;
+    }
+    .skew.animate {
+        left: auto;
+        transform: translateX(550px);
+    }
+}
